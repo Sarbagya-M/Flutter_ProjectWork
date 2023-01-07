@@ -1,8 +1,6 @@
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter/material.dart';
 
-import 'package:ui/pages/language.dart';
-
 import '../Models/getPost.dart';
 import '../services/networkHelper.dart';
 

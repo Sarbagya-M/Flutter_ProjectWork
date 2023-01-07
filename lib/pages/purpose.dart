@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ui/pages/home.dart';
+
 import 'package:ui/pages/language.dart';
-import 'package:ui/pages/page2.dart';
-import 'package:ui/pages/singUpPage.dart';
 
 class Purpose extends StatelessWidget {
   const Purpose({Key? key}) : super(key: key);

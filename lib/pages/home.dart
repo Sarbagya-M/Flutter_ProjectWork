@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+
 import 'package:ui/pages/page1.dart';
 import 'package:ui/pages/page2.dart';
 import 'package:ui/pages/page3.dart';

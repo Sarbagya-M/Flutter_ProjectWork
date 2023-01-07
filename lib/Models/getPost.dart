@@ -3,7 +3,6 @@
 //     final post = postFromJson(jsonString);
 
 import 'dart:convert';
-import 'package:http/http.dart';
 
 List<Posts> postFromJson(String str) =>
     List<Posts>.from(json.decode(str).map((x) => Posts.fromJson(x)));
