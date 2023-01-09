@@ -52,63 +52,66 @@ class _Page2State extends State<Page2> {
         child: ListView.builder(
           itemCount: posts?.length,
           itemBuilder: (context, index) {
-            return Container(
-              margin: EdgeInsets.all(20),
-              child: Material(
-                elevation: 5.0,
-                shadowColor: Colors.blueGrey,
-                child: Container(
-                  height: 100,
-                  alignment: Alignment.center,
-                  child: ListTile(
-                    tileColor: Colors.white,
-                    leading: SizedBox(
-                      child: Image.asset('images/flower.png'),
-                    ),
-                    title: Container(
-                      child: Text(
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 0, 0, 0),
-                          fontSize: 18,
-
-                          // backgroundColor: Color.fromARGB(255, 66, 66, 66),
-                        ),
-                        posts![index].name ?? 'No Data',
+            return Visibility(
+              visible: isLoaded,
+              child: Container(
+                margin: EdgeInsets.all(20),
+                child: Material(
+                  elevation: 5.0,
+                  shadowColor: Colors.blueGrey,
+                  child: Container(
+                    height: 100,
+                    alignment: Alignment.center,
+                    child: ListTile(
+                      tileColor: Colors.white,
+                      leading: SizedBox(
+                        child: Image.asset('images/flower.png'),
                       ),
-                    ),
-                    subtitle: Row(
-                      children: [
-                        Text(
-                          'Rs. ',
+                      title: Container(
+                        child: Text(
                           style: TextStyle(
-                            color: Color.fromARGB(255, 19, 107, 189),
+                            color: Color.fromARGB(255, 0, 0, 0),
                             fontSize: 18,
 
                             // backgroundColor: Color.fromARGB(255, 66, 66, 66),
                           ),
+                          posts![index].name ?? 'No Data',
                         ),
-                        Text(
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 19, 107, 189),
-                            fontSize: 18,
+                      ),
+                      subtitle: Row(
+                        children: [
+                          Text(
+                            'Rs. ',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 19, 107, 189),
+                              fontSize: 18,
 
-                            // backgroundColor: Color.fromARGB(255, 66, 66, 66),
+                              // backgroundColor: Color.fromARGB(255, 66, 66, 66),
+                            ),
                           ),
-                          posts![index].price.toString(),
+                          Text(
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 19, 107, 189),
+                              fontSize: 18,
+
+                              // backgroundColor: Color.fromARGB(255, 66, 66, 66),
+                            ),
+                            posts![index].price.toString(),
+                          ),
+                        ],
+                      ),
+                      trailing: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProductDetail()),
+                          );
+                        },
+                        icon: Icon(
+                          Icons.arrow_forward,
+                          color: Color.fromARGB(255, 19, 96, 196),
                         ),
-                      ],
-                    ),
-                    trailing: IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ProductDetail()),
-                        );
-                      },
-                      icon: Icon(
-                        Icons.arrow_forward,
-                        color: Color.fromARGB(255, 19, 96, 196),
                       ),
                     ),
                   ),
