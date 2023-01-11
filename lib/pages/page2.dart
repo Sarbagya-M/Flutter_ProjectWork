@@ -64,12 +64,17 @@ class _Page2State extends State<Page2> {
                     alignment: Alignment.center,
                     child: ListTile(
                       tileColor: Colors.white,
-                      leading: SizedBox(
+                      leading: Container(
                           width: 60,
                           height: 60,
                           //child: Image.asset('images/flower.png'),
-                          child: Image.network(
-                              'http://mark.bslmeiyu.com/uploads/${posts![index].img}')),
+
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: NetworkImage(
+                                  'http://mark.bslmeiyu.com/uploads/${posts![index].img}'),
+                            ),
+                          )),
                       title: Container(
                         child: Text(
                           style: TextStyle(

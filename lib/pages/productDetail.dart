@@ -43,7 +43,7 @@ class _ProductDetailState extends State<ProductDetail> {
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 228, 196, 213),
+        backgroundColor: Color.fromARGB(255, 236, 209, 224),
         elevation: 0,
         leading: IconButton(
           onPressed: () {
