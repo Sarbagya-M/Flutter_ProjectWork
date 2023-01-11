@@ -48,13 +48,13 @@ class _Page2State extends State<Page2> {
         ),
       ),
       backgroundColor: Color.fromARGB(255, 245, 252, 253),
-      body: Container(
-        child: ListView.builder(
-          itemCount: posts?.length,
-          itemBuilder: (context, index) {
-            return Visibility(
-              visible: isLoaded,
-              child: Container(
+      body: Visibility(
+        visible: isLoaded,
+        child: Container(
+          child: ListView.builder(
+            itemCount: posts?.length,
+            itemBuilder: (context, index) {
+              return Container(
                 margin: EdgeInsets.all(20),
                 child: Material(
                   elevation: 5.0,
@@ -119,10 +119,11 @@ class _Page2State extends State<Page2> {
                     ),
                   ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
+        replacement: Center(child: CircularProgressIndicator()),
       ),
     );
   }
