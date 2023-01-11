@@ -144,7 +144,7 @@ class _ProductDetailState extends State<ProductDetail> {
                         margin: EdgeInsets.only(left: 28, bottom: 15),
                         child: RatingBar.builder(
                           itemSize: 20,
-                          initialRating: posts![0].stars!.toDouble(),
+                          initialRating: posts![index].stars!.toDouble(),
                           minRating: 1,
                           direction: Axis.horizontal,
                           allowHalfRating: true,
@@ -162,7 +162,7 @@ class _ProductDetailState extends State<ProductDetail> {
                       Container(
                         margin: EdgeInsets.only(left: 10, bottom: 15),
                         child: Text(
-                          posts![0].stars.toString(),
+                          posts![index].stars.toString(),
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w500,
