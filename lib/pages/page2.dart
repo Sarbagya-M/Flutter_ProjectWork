@@ -65,8 +65,11 @@ class _Page2State extends State<Page2> {
                     child: ListTile(
                       tileColor: Colors.white,
                       leading: SizedBox(
-                        child: Image.asset('images/flower.png'),
-                      ),
+                          width: 60,
+                          height: 60,
+                          //child: Image.asset('images/flower.png'),
+                          child: Image.network(
+                              'http://mark.bslmeiyu.com/uploads/${posts![index].img}')),
                       title: Container(
                         child: Text(
                           style: TextStyle(
@@ -105,7 +108,7 @@ class _Page2State extends State<Page2> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ProductDetail()),
+                                builder: (context) => ProductDetail(index)),
                           );
                         },
                         icon: Icon(

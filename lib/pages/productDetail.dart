@@ -5,13 +5,20 @@ import '../Models/getPost.dart';
 import '../services/networkHelper.dart';
 
 class ProductDetail extends StatefulWidget {
+  final int index;
+  ProductDetail(this.index);
+
   @override
-  State<ProductDetail> createState() => _ProductDetailState();
+  State<ProductDetail> createState() {
+    return _ProductDetailState(this.index);
+  }
 }
 
 class _ProductDetailState extends State<ProductDetail> {
   List<Posts>? posts;
   bool isLoaded = false;
+  int index;
+  _ProductDetailState(this.index);
 
   @override
   void initState() {
@@ -69,8 +76,9 @@ class _ProductDetailState extends State<ProductDetail> {
               height: MediaQuery.of(context).size.height / 2.8,
               color: Color.fromARGB(255, 236, 209, 224),
               child: SizedBox(
-                child: Image.asset('images/rose.png'),
-              ),
+                  //child: Image.asset('images/rose.png'),
+                  child: Image.network(
+                      'http://mark.bslmeiyu.com/uploads/${posts![index].img}')),
             ),
             Container(
               margin: EdgeInsets.only(top: 20, left: 30, right: 30),
@@ -84,7 +92,7 @@ class _ProductDetailState extends State<ProductDetail> {
 
                     // backgroundColor: Color.fromARGB(255, 66, 66, 66),
                   ),
-                  posts![0].name ?? 'No Data',
+                  posts![index].name ?? 'No Data',
                 ),
               ),
             ),
@@ -112,7 +120,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   ),
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    posts![0].price.toString(),
+                    posts![index].price.toString(),
                     style: TextStyle(
                       color: Color.fromARGB(255, 34, 108, 255),
                       fontSize: 20,
@@ -186,7 +194,7 @@ class _ProductDetailState extends State<ProductDetail> {
                     height: 1.5,
                     // backgroundColor: Color.fromARGB(255, 66, 66, 66),
                   ),
-                  posts![0].description ?? 'No data',
+                  posts![index].description ?? 'No data',
                 ),
               ),
             ),
